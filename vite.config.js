@@ -9,24 +9,20 @@ module.exports = {
     host: 'localhost',
     port: 3000,
     open: false,
-    watch: {
-      usePolling: true,
-      disableGlobbing: false,
-    },
   },
   resolve: {
-    extensions: ['.js', '.json'],
+    extensions: ['.js', '.ts', '.json'],
   },
   build: {
     outDir: resolve('./static/dist'),
     assetsDir: '',
     manifest: true,
     emptyOutDir: true,
-    target: 'es2015',
+    target: 'esnext',
     rollupOptions: {
       input: {
-        main: resolve('./static/src/entrypoints/main.js'),
-        second: resolve('./static/src/entrypoints/main.js')
+        app1: resolve('./static/src/entrypoints/app-1/main.ts'),
+        app2: resolve('./static/src/entrypoints/app-2/main.ts')
       },
       output: {
         chunkFileNames: undefined,

@@ -2,9 +2,17 @@
   <h1>{{ message }}</h1>
 </template>
 
-<script setup>
-import { ref } from "vue";
-const message = ref('Application 1')
+<script>
+import {ref, defineComponent} from "vue";
+
+export default defineComponent({
+  setup() {
+    const message = ref('Application 1')
+    return {
+      message
+    }
+  }
+})
 </script>
 
 <style>
