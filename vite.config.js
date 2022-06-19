@@ -1,7 +1,8 @@
 const { resolve } = require('path');
+const vue = require('@vitejs/plugin-vue')
 
 module.exports = {
-  plugins: [],
+  plugins: [vue()],
   root: resolve('./static/src'),
   base: '/static/',
   server: {
@@ -24,7 +25,8 @@ module.exports = {
     target: 'es2015',
     rollupOptions: {
       input: {
-        main: resolve('./static/src/js/main.js'),
+        main: resolve('./static/src/entrypoints/main.js'),
+        second: resolve('./static/src/entrypoints/main.js')
       },
       output: {
         chunkFileNames: undefined,
